@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-
 import riderData from "../data.json";
 import RiderInfo from "./RiderInfo";
+
 
 
 let riderDataUsable = riderData;
@@ -79,24 +79,15 @@ function RiderData(){
     
 
     useEffect(()=>{
-
-        console.log(sortConfig.key+" from useEffect "+sortConfig.direction)
-
-        setSortedRiderData(sortArray(sortConfig.direction,sortedRiderData));
-
-        console.log(sortConfig.key+" from useEffect "+sortConfig.direction);
-        console.log(JSON.stringify(sortedRiderData)+" from useEffect");
+        setSortedRiderData(sortArray(sortConfig.direction,sortedRiderData));        
     },[sortConfig.direction,sortConfig.key])
 
     //Sort function (invoked when attribute buttons are clicked)
 
     function sort(event){
         const {name} = event.target;
-        // console.log("clicked " + name)
         let key=name;
-        let direction = null;
-        console.log(key+' '+direction);
-        
+        let direction = null;       
 
         if(sortConfig && sortConfig.key === key && sortConfig.direction === "ascending"){
             direction = "descending";
@@ -120,8 +111,11 @@ function RiderData(){
         return sortConfig.key === name ? sortConfig.direction:undefined;
     }
 
-    return ( 
-        <div> 
+    
+
+    return ( <div>
+        
+        <div id="riderData"> 
             <div className="current_date">{new Date().toString().slice(4,16)}</div>
             <div className="riderInfoHeading">
                 <button className={"sort_buttons leftmost_button " + getClassNameFor('avg_safety_score')} onClick={sort} name="avg_safety_score">Safety_Score</button>
@@ -146,6 +140,7 @@ function RiderData(){
                     )
                 })
                 }
+        </div>
         </div>
     );
 }

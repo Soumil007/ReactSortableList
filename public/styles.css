@@ -24,13 +24,22 @@ body{
     left: 20px;
     top: 10px;
 }
-.heading button{
+
+/* downloading Button */
+
+.downloadButton{
     position: absolute;
-    border: none;
-    margin: 30px 0 0 850px;
-    background-color: transparent;
+    background-color: purple;
     cursor: pointer;
-    right: 1000px;
+    color: white;
+    z-index: 1;
+    font-size: 30px;
+    font-weight: 700;
+    min-width: 150px;
+    top: 35px;
+    left: 800px;
+    border:1px solid blue;
+    border-radius: 20px;
 } 
 .heading h2{
     display: inline;
@@ -52,8 +61,27 @@ div.riderInfoDiv{
     padding: 10px;
     box-shadow: 3px 3px 6px 5px #ccc;
     border-radius: 10px;
+    page-break-inside: avoid;
 }
-
+.chartContainer{
+    overflow: hidden;
+    /* height: 0;
+    transition: height 0.4s ease-out; */
+}
+/* div.riderInfoDiv:hover .chartContainer{
+    height: 350px;
+} */
+.chartDisplay{
+    display:inline-block;
+    height:250px;
+    width:500px;
+    margin-left:70px;
+    margin-top:40px;
+    margin-bottom:0px;
+    border:5px solid rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 5px;
+}
 div.riderInfoDiv span{
     position: relative;
     display: inline-block;
@@ -109,6 +137,7 @@ div.riderInfoHeading{
     background: #d9d9d9;
     color: white;
     border-radius: 10px;
+    min-height: 60px;
 }
 
 div.current_date{
@@ -121,6 +150,7 @@ div.current_date{
     color: aliceblue;
     padding: 20px;
     border-radius: 10px;
+    max-height: 100px;
 }
 
 button.sort_buttons{
@@ -136,6 +166,7 @@ button.sort_buttons{
     border: none;
     border-right: 2px solid white;
     transition: all ease 1s;
+    min-height: 65px;
 }
 button.leftmost_button{
     border-top-left-radius: 10px;
@@ -158,24 +189,12 @@ button.descending::after{
     content: '⬇';
 }
 
-.chartDisplay{
-    display:inline-block;
-    height:250px;
-    width:500px;
-    margin-left:70px;
-    margin-top:40px;
-    margin-bottom:0px;
-    border:5px solid rgba(0,0,0,0.1);
-    border-radius: 20px;
-    padding: 5px;
-}
-
 
 
 footer{
     clear: both;
     position: relative;
-    bottom: -1px;
+    bottom: 0px;
     min-width: 100%;
     height: 2.5rem;
     padding-top: 1px;

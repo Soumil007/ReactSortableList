@@ -34,38 +34,38 @@ function Chart(props){
     useEffect(()=>{
         chart()
     },[])
-    return <div>
-        <div className="chartDisplay">
-        <Bar 
-            data={safetyScoreChartData}
-            options={{
-                responsive:true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }}
-        />
-        </div>
-        <div className="chartDisplay">
-        <Bar 
-            data={overspeedingChartData}
-            options={{
-                responsive:true,
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true
-                        }
-                    }]
-                }
-            }}
-        />
-        </div>
-    </div>
+    return <div className="chartContainer">
+                <div className="chartDisplay">
+                    <Bar 
+                        data={safetyScoreChartData}
+                        options={{
+                            responsive:true,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        }}
+                    />
+                </div>
+                <div className="chartDisplay">
+                    <Bar 
+                        data={overspeedingChartData}
+                        options={{
+                            responsive:true,
+                            scales: {
+                                yAxes: [{
+                                    ticks: {
+                                        beginAtZero: true
+                                    }
+                                }]
+                            }
+                        }}
+                    />
+                </div>
+            </div>
 }
 
 export default Chart;
